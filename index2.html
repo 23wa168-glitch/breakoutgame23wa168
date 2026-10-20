@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Breakout - Deep Q-Learning AI</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f9;
+      color: #222;
+      text-align: center;
+      margin: 20px;
+    }
+
+    canvas {
+      display: block;
+      margin: 16px auto;
+      max-width: 100%;
+      background: #fff;
+      border: 1px solid #bbb;
+    }
+
+    .panel {
+      max-width: 520px;
+      margin: 16px auto;
+      padding: 16px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px #0001;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .stat {
+      padding: 10px;
+      background: #eef3f8;
+      border-radius: 6px;
+    }
+
+    button {
+      padding: 10px 16px;
+      margin: 5px;
+      cursor: pointer;
+    }
+
+    #status {
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Breakout: Deep Q-Learning</h1>
+  <p>AIがゲームをプレイし、経験から行動を学習します。</p>
+
+  <canvas id="myCanvas" width="480" height="320"></canvas>
+
+  <div class="panel">
+    <div class="stats">
+      <div class="stat">Episode<br><strong id="episode">0</strong></div>
+      <div class="stat">Score<br><strong id="score">0</strong></div>
+      <div class="stat">Average reward<br><strong id="reward">0.00</strong></div>
+      <div class="stat">Exploration ε<br><strong id="epsilon">1.00</strong></div>
+    </div>
+
+    <p id="status">TensorFlow.jsを読み込み中...</p>
+    <button id="toggleButton" disabled>一時停止</button>
+    <button id="saveButton" disabled>AIモデルを保存</button>
+    <button id="loadButton" disabled>AIモデルを読み込む</button>
+    <p><small>最初はランダムな行動が多く、学習が進むにつれて行動が変化します。</small></p>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.22.0/dist/tf.min.js"></script>
+<script src="script2.js"></script>
